@@ -1,12 +1,7 @@
 function isPalindrome(word) {
   // Write your algorithm here
-  const forward = word.split("");
-  let backward = word.split("").reverse();
-  for (let i = 0; i < word.length; i++) {
-    if (forward[i] !== backward[i]) return false;
-  }
-
-  return true;
+  
+  return word === word.split('').reverse().join('');
 }
 
 /* 
@@ -24,9 +19,17 @@ if (require.main === module) {
   console.log("=>", isPalindrome("mom"));
 
   console.log("");
+  console.log("Expecting: true");
+  console.log("=>", isPalindrome("rotor"));
+
+  console.log("");
 
   console.log("Expecting: false");
   console.log("=>", isPalindrome("car"));
+  console.log("");
+
+  console.log("Expecting: false");
+  console.log("=>", isPalindrome("Laptop"));
 }
 
 module.exports = isPalindrome;
