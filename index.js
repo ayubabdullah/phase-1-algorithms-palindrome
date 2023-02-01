@@ -1,5 +1,12 @@
 function isPalindrome(word) {
   // Write your algorithm here
+  const forward = word.split("");
+  let backward = word.split("").reverse();
+  for (let i = 0; i < word.length; i++) {
+    if (forward[i] !== backward[i]) return false;
+  }
+
+  return true;
 }
 
 /* 
@@ -14,12 +21,12 @@ function isPalindrome(word) {
 if (require.main === module) {
   // add your own custom tests in here
   console.log("Expecting: true");
-  console.log("=>", isPalindrome("racecar"));
+  console.log("=>", isPalindrome("mom"));
 
   console.log("");
 
   console.log("Expecting: false");
-  console.log("=>", isPalindrome("robot"));
+  console.log("=>", isPalindrome("car"));
 }
 
 module.exports = isPalindrome;
